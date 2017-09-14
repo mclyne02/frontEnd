@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    /*border: 1px solid rgba(0, 0, 0, 0.3);*/
+}
+
+.col-md-4 {
+    text-align: center;
+}
+
+.occasion {
+    margin-bottom: 30px;
+}
+
+.occasionButton {
+    margin-bottom: 30px;
+}
+
+.selectionImage {
+    position: absolute;
+    width: 95%;
+    top: 0;
+    left: 5%;
+}
+
+.selectionCupcakes {
+    text-align: left;
+}
