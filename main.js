@@ -5,30 +5,16 @@ $(document).ready(function() {
 });
 
 function selectionClicked() {
-    var birthdayOccasionButton = $('.occasionButton:eq(0)');
-    var eventOccasionButton = $('.occasionButton:eq(1)');
-    var indOccasionButton = $('.occasionButton:eq(2)');
+    $('.occasionButton').on('click', function() {
 
-    var birthdayImage = $('.selectionImage:eq(0)');
-    var eventImage = $('.selectionImage:eq(1)');
-    var indImage = $('.selectionImage:eq(2)');
-
-    var birthdayCupcakes = $('.selectionCupcakes:eq(0)');
-    var eventCupcakes = $('.selectionCupcakes:eq(1)');
-    var indCupcakes = $('.selectionCupcakes:eq(2)');
-
-    birthdayOccasionButton.on('click', function() {
-        birthdayImage.fadeToggle();
-        birthdayCupcakes.fadeToggle(300);
-    });
-
-    eventOccasionButton.on('click', function() {
-        eventImage.fadeToggle();
-        eventCupcakes.fadeToggle(300);
-    });
-
-    indOccasionButton.on('click', function() {
-        indImage.fadeToggle();
-        indCupcakes.fadeToggle(300);
+        var selectedCupcakes = $(this).nextAll('.selectionCupcakes');
+        var listIsHidden = selectedCupcakes.is(':visible');
+        if(listIsHidden) {
+            $(this).next().delay(400).fadeToggle();
+            selectedCupcakes.fadeToggle();
+        } else {
+            $(this).next().fadeToggle();
+            selectedCupcakes.delay(400).fadeToggle();
+        }
     });
 };
